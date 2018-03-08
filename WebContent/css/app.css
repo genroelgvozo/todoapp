@@ -1,0 +1,138 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.4em;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    min-width: 230px;
+    max-width: 550px;
+    margin: 0 auto;
+    font-smoothing: antialiased;
+    font-weight: 300;
+}
+button,
+input[type="checkbox"] {
+    outline: none;
+}
+
+.todoapp {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.form {
+    display:flex;
+    align-items: center;
+
+    margin: 130px 0 10px 0;
+    border-bottom:1px solid #aaaaaa;
+    position: relative;
+
+}
+
+.form__input {
+    width:100%;
+    height:50px;
+    font-size:24pt;
+    padding-left: 10px;
+}
+
+.form__input::placeholder {
+    font-style: italic;
+    font-weight: 300;
+    color: #e6e6e6;
+}
+
+.form__header {
+    position: absolute;
+    top: -145px;
+    width: 100%;
+    font-size: 100px;
+    font-weight: 100;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+}
+
+.form__add {
+    font-weight: bold;
+    height:100%;
+    float:right;
+    border:0;
+    background: none;
+}
+.todolist {
+    margin:0;
+    padding:0;
+}
+.todolist__item {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    border-bottom: 1px solid #555555;
+}
+
+.todolist__description {
+    padding:20px;
+    flex-grow: 2;
+}
+
+.todolist__done_button {
+    text-align: center;
+    width: 40px;
+    height: auto;
+    margin: auto 0;
+    border: none; /* Mobile Safari */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.todolist__done_button:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+}
+
+.todolist__done_button:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+}
+
+.todolist__item_done .todolist__description {
+    color: #d9d9d9;
+    text-decoration: line-through;
+}
+
+.todolist__delete {
+    display: none;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    font-size: 30px;
+    color: #cc9a9a;
+    margin-bottom: 11px;
+    transition: color 0.2s ease-out;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.todolist__delete:hover {
+    color: #af5b5e;
+}
+
+.todolist__delete:after {
+    content: '×';
+}
+
+.todolist__item:hover .todolist__delete {
+    display: block;
+}
