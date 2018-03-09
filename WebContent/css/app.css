@@ -30,7 +30,7 @@ input[type="checkbox"] {
     display:flex;
     align-items: center;
 
-    margin: 130px 0 10px 0;
+    margin: 130px 0 0 0;
     border-bottom:1px solid #aaaaaa;
     position: relative;
 
@@ -73,6 +73,7 @@ input[type="checkbox"] {
 .todolist__item {
     background: #fff;
     display: flex;
+    position:relative;
     align-items: center;
     font-size: 24px;
     border-bottom: 1px solid #555555;
@@ -81,6 +82,13 @@ input[type="checkbox"] {
 .todolist__description {
     padding:20px;
     flex-grow: 2;
+    border:none;
+    font:inherit;
+}
+
+.todolist__description:disabled {
+    background: #fff;
+    color:#000;
 }
 
 .todolist__done_button {
@@ -107,7 +115,6 @@ input[type="checkbox"] {
 }
 
 .todolist__delete {
-    display: none;
     width: 40px;
     height: 40px;
     margin: auto 0;
@@ -135,4 +142,22 @@ input[type="checkbox"] {
 
 .todolist__item:hover .todolist__delete {
     display: block;
+}
+
+.todolist__edit {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    z-index: 2;
+}
+
+.todolist__item_editing .todolist__edit {
+    display: block;
+}
+
+.footer {
+    text-align: center;
 }

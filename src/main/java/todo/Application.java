@@ -53,8 +53,7 @@ public class Application {
         ServletContextHandler servletContextHandler = new ServletContextHandler();
         servletContextHandler.setContextPath("/todo/*");
         servletContextHandler.setServletHandler(handler);
-        servletContextHandler.setInitParameter("useFileMappedBuffer","false");
-        servletContextHandler.setInitParameter("cacheControl","max-age=0,public");
+
 
         //Static files handler
         ResourceHandler handlerHTML = new ResourceHandler();
@@ -65,8 +64,11 @@ public class Application {
         ContextHandler contextHandler = new ContextHandler();
         contextHandler.setContextPath("/");
         contextHandler.setHandler(handlerHTML);
+
+        //Попытка побороть на винде блокировку статики во время запуска
+        //Почему то не работает. Редактировать html,js,css при запущенном серве нельзя, необходимо каждый раз стопать
+        servletContextHandler.setInitParameter("useFileMappedBuffer","false");
         contextHandler.setInitParameter("useFileMappedBuffer", "false");
-        contextHandler.setInitParameter("cacheControl","max-age=0,public");
 
 
         ContextHandlerCollection contexts = new ContextHandlerCollection();
